@@ -21,5 +21,5 @@ function thirdPage(){
 }
 
 $(document).on("click", "#start-btn", secondPage);
-$(document).on("click", "#main-btn", thirdPage);
+$(document).on("click", "#submit-btn", thirdPage);
 $(document).on("click", "#restart-btn", secondPage);
