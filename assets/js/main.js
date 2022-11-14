@@ -1,2 +1,7 @@
 
 /* javascript */
+firstPage();
+
+function firstPage(){
+
+}
