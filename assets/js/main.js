@@ -6,6 +6,8 @@ $("#goal-1").draggable({
   revert: function(dropElem){
     if (dropElem && dropElem.hasId("#goal-area")){
       goalSelected = true;
+    } else {
+      goalSelected = false;
     }
   }
 });
