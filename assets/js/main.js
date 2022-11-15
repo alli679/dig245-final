@@ -2,7 +2,7 @@
 /* javascript */
 let goalSelected = false;
 
-$("#goal-1").draggable({
+$(".goal").draggable({
   revert: function(dropElem){
     if (dropElem && dropElem.hasId("#goal-area")){
       goalSelected = true;
