@@ -1,5 +1,15 @@
 
 /* javascript */
+let goalSelected = false;
+
+$("#goal-1").draggable({
+  revert: function(dropElem){
+    if (dropElem && dropElem.hasId("#goal-area")){
+      goalSelected = true;
+    }
+  }
+});
+
 firstPage();
 
 function firstPage(){
