@@ -4,7 +4,7 @@ let goalSelected = false;
 
 $(".goal").draggable({
   revert: function(dropElem){
-    if (dropElem && dropElem.hasId("#goal-area")){
+    if (dropElem && dropElem.hasClass(".goal-area")){
       goalSelected = true;
     } else {
       goalSelected = false;
