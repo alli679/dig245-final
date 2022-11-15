@@ -1,5 +1,9 @@
 
 /* css */
+.start, .main, .results {
+  background-color: #BCE7FD;
+}
+
 .goal {
   background-color: #12EAEA;
 }
