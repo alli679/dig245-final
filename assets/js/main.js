@@ -2,7 +2,7 @@
 /* javascript */
 let goalSelected = false;
 
-$(".goal").draggable({
+/* $(".goal").draggable({
   revert: function(dropElem){
     if (dropElem && dropElem.hasClass(".goal-area")){
       goalSelected = true;
@@ -10,7 +10,7 @@ $(".goal").draggable({
       goalSelected = false;
     }
   }
-});
+});*/
 
 firstPage();
 
