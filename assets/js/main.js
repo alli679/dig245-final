@@ -1,6 +1,6 @@
 
 /* javascript */
-let goalSelected = false;
+var goalSelected = false;
 let dragZ = 10;
 
 $(".goal-1").draggable({
