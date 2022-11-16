@@ -11,6 +11,7 @@ $(".goal-1").draggable({
   },
 
   revert: function(dropElem){
+    console.log(goalSelected);
     if (dropElem && dropElem.hasClass(".goal-area")){
       goalSelected = true;
     }
