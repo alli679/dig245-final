@@ -4,6 +4,10 @@ body {
   background-color: #BCE7FD;
 }
 
+img {
+  width: 100%;
+}
+
 .goal {
   background-color: #12EAEA;
 }
