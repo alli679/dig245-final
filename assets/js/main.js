@@ -3,9 +3,9 @@
 let goalSelected = false;
 let dragZ = 10;
 
-$(".goal").draggable({
+$(".goal-1").draggable({
   drag: function(){
-    $(".goal").css({
+    $(".goal-1").css({
       "z-index": ++dragZ
     });
   },
