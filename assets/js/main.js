@@ -12,8 +12,6 @@ $(".goal-1").draggable({
 });
 
 $(".goal-area").droppable({
-
-
   drop: function(){
     goalSelected = true;
     console.log(goalSelected);
