@@ -2,6 +2,7 @@
 /* javascript */
 var goalSelected = false;
 let dragZ = 10;
+// const goalOne = $(".goal-1").position();
 
 $(".goal-1").draggable({
   drag: function(){
@@ -10,7 +11,14 @@ $(".goal-1").draggable({
     });
   },
 
-  revert: "invalid"
+  revert: function(dropElem){
+    if (dropElem && dropElem.hasClass("goal-area")){
+      goalSelected = true;
+      console.log(goalSelected);
+    } else {
+      return true;
+    }
+  }
 });
 
 $(".goal-2").draggable({
@@ -83,12 +91,13 @@ $(".goal-8").draggable({
   revert: "invalid"
 });
 
+/*
 $(".goal-area").droppable({
   drop: function(){
     goalSelected = true;
     console.log(goalSelected);
   }
-});
+});*/
 
 firstPage();
 
