@@ -9,17 +9,15 @@ $(".goal-1").draggable({
       "z-index": ++dragZ
     });
   },
-
-  revert: function(dropElem){
-    console.log(goalSelected);
-    if (dropElem && dropElem.hasClass(".goal-area")){
-      goalSelected = true;
-    }
-  }
 });
 
 $(".goal-area").droppable({
-  accept: ".goal-1"
+
+
+  drop: function(){
+    goalSelected = true;
+    console.log(goalSelected);
+  }
 });
 
 firstPage();
