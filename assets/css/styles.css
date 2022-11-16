@@ -7,3 +7,8 @@ body {
 .goal {
   background-color: #12EAEA;
 }
+
+.goal-area {
+  background-color: #C492B1;
+  height: 300px;
+}
