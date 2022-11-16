@@ -13,8 +13,6 @@ $(".goal").draggable({
   revert: function(dropElem){
     if (dropElem && dropElem.hasClass(".goal-area")){
       goalSelected = true;
-    } else {
-      goalSelected = false;
     }
   }
 });
