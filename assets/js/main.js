@@ -19,6 +19,8 @@ $(".goal-2").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-3").draggable({
@@ -27,6 +29,8 @@ $(".goal-3").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-4").draggable({
@@ -35,6 +39,8 @@ $(".goal-4").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-5").draggable({
@@ -43,6 +49,8 @@ $(".goal-5").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-6").draggable({
@@ -51,6 +59,8 @@ $(".goal-6").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-7").draggable({
@@ -59,6 +69,8 @@ $(".goal-7").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-8").draggable({
@@ -67,6 +79,8 @@ $(".goal-8").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-area").droppable({
