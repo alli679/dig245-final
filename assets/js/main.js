@@ -34,9 +34,11 @@ function secondPage(){
 }
 
 function thirdPage(){
-  $(".start").hide();
-  $(".main").hide();
-  $(".results").show();
+  if (goalSelected) {
+    $(".start").hide();
+    $(".main").hide();
+    $(".results").show();
+  }
 }
 
 $(document).on("click", "#start-btn", secondPage);
