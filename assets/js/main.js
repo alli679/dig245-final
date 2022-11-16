@@ -9,6 +9,8 @@ $(".goal-1").draggable({
       "z-index": ++dragZ
     });
   },
+
+  revert: "invalid"
 });
 
 $(".goal-2").draggable({
