@@ -1,8 +1,15 @@
 
 /* javascript */
 let goalSelected = false;
+let dragZ = 10;
 
-/* $(".goal").draggable({
+$(".goal").draggable({
+  drag: function(){
+    $(".goal").css({
+      "z-index": ++dragZ
+    });
+  },
+
   revert: function(dropElem){
     if (dropElem && dropElem.hasClass(".goal-area")){
       goalSelected = true;
@@ -10,7 +17,7 @@ let goalSelected = false;
       goalSelected = false;
     }
   }
-});*/
+});
 
 firstPage();
 
