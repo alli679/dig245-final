@@ -18,6 +18,10 @@ $(".goal-1").draggable({
   }
 });
 
+$(".goal-area").droppable({
+  accept: ".goal-1 .goal-2 .goal-3 .goal-4 .goal-5 .goal-6 .goal-7 .goal-8"
+});
+
 firstPage();
 
 function firstPage(){
