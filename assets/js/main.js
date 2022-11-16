@@ -92,13 +92,8 @@ $(".goal-8").draggable({
   revert: "invalid"
 });
 
-/*
-$(".goal-area").droppable({
-  drop: function(){
-    goalSelected = true;
-    console.log(goalSelected);
-  }
-});*/
+
+$(".goal-area").droppable({});
 
 firstPage();
 
