@@ -2,7 +2,7 @@
 /* javascript */
 var goalSelected = false;
 let dragZ = 10;
-// const goalOne = $(".goal-1").position();
+let startPos;
 
 $(".goal-1").draggable({
   drag: function(){
@@ -11,13 +11,27 @@ $(".goal-1").draggable({
     });
   },
 
+  start: function(event, ui){
+    startPos = ui.helper.position();
+  },
+
   revert: function(dropElem){
     if (dropElem && dropElem.hasClass("goal-area")){
       goalSelected = true;
       console.log(goalSelected);
       return false;
     } else {
-      return true;
+      goalSelected = false;
+
+      // Add code to return it to its original position
+      $(".goal-1").css({
+        top: startPos.top,
+        left: startPos.left
+      });
+
+      return false;
+
+
     }
   }
 });
