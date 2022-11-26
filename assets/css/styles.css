@@ -12,6 +12,8 @@ img {
   background-color: #12EAEA;
   text-align: center;
   position: "static";
+  padding: 20px;
+  margin: 10px;
 }
 
 .goal-area {
