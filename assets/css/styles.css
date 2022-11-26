@@ -8,11 +8,19 @@ img {
   width: 100%;
 }
 
-.goal-1, .goal-2, .goal-3, .goal-4, .goal-5, .goal-6, .goal-7, .goal-8 {
+.goal-1, .goal-2, .goal-3, .goal-4, .goal-5, .goal-6, .goal-7, .goal-8, .goal-9, .goal-10 {
   background-color: #12EAEA;
+  text-align: center;
+  position: "static";
 }
 
 .goal-area {
   background-color: #C492B1;
   height: 300px;
+}
+
+.screenshot {
+  height: 450px;
+  width: 720px;
+  background-color: white;
 }
