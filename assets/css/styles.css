@@ -31,3 +31,7 @@ img {
 .all-results {
   margin: 50px 0px;
 }
+
+#start-btn {
+  width: 100%;
+}
