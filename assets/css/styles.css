@@ -8,12 +8,20 @@ img {
   width: 100%;
 }
 
-.goal-1, .goal-2, .goal-3, .goal-4, .goal-5, .goal-6, .goal-7, .goal-8, .goal-9, .goal-10 {
+.goal-item {
   background-color: #12EAEA;
   text-align: center;
+  float: left;
   position: "static";
+  width: 200px;
   padding: 20px;
   margin: 10px;
+}
+
+.goal-item-true {
+  background-color: #ff0000;
+  float: none;
+  position: "relative";
 }
 
 .goal-area {
@@ -32,6 +40,6 @@ img {
   margin: 10px 0px 90px 0px;
 }
 
-#start-btn {
+.btn {
   width: 100%;
 }
