@@ -7,6 +7,7 @@ let deceptiveGoals = [3, 4, 5, 7, 8, 10];
 
 // Problems: When one pattern is dragged out, goalSelected remains false even if there is another pattern in the droppable area.
 // Having trouble getting the correct results to show up depending on what patterns the user selected. I tried using a for loop, but the counter keeps increasing to 11.
+// The results also keep showing infromation of the pattern to the right of the one selected.
 
 $(".goal-item").draggable({
   start: function(event, ui){
