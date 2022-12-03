@@ -5,9 +5,9 @@ let dragZ = 10;
 let goalsSelected = [false, false, false, false, false, false, false, false, false, false];
 let deceptiveGoals = [3, 4, 5, 7, 8, 10];
 
-// Problems: When one pattern is dragged out, goalSelected remains false even if there is another pattern in the droppable area.
-// Having trouble getting the correct results to show up depending on what patterns the user selected. I tried using a for loop, but the counter keeps increasing to 11.
+// Problems: Having trouble getting the correct results to show up depending on what patterns the user selected. I tried using a for loop, but the counter keeps increasing to 11.
 // The results also keep showing infromation of the pattern to the right of the one selected.
+// Unable to drag boxes after reverting them once.
 
 $(".goal-item").draggable({
   start: function(event, ui){
@@ -24,7 +24,7 @@ $(".goal-item").draggable({
     if (dropElem && dropElem.hasClass("goal-area")){
       patternSelected = true;
       goalsSelected[item] = true;
-      console.log(patternSelected);
+      console.log("patternSelected" , patternSelected);
       console.log(goalsSelected[item]);
       for (var i = 0; i < deceptiveGoals.length; i++){
         if (item === deceptiveGoals[i]){
@@ -34,6 +34,7 @@ $(".goal-item").draggable({
       return false;
     } else {
       goalsSelected[item]= false;
+      checkMainGoal();
       $(this).removeClass("goal-item-true").css({
         position: "static"
       });
@@ -44,7 +45,6 @@ $(".goal-item").draggable({
           left: 0
         });
       }, 100);
-      checkMainGoal();
       return false;
     }
   }
@@ -53,15 +53,15 @@ $(".goal-item").draggable({
 function checkMainGoal(){
   let selected = false;
   for(var i = 0; i < goalsSelected.length; i++) {
-    console.log(goalsSelected[i]);
-    if (goalsSelected[i]){
+    if (goalsSelected[i] === true){
       selected = true;
+
+      break;
     }
-    break;
   }
   patternSelected = selected;
-
-  console.log(patternSelected);
+  console.log("Goal selected", goalsSelected);
+  console.log("patternSelected", patternSelected);
 }
 
 /*$(".goal-2").draggable({
@@ -129,24 +129,20 @@ function thirdPage(){
 }
 
 function fourthPage(){
-  let i = 0;
   if (patternSelected) {
     $(".start").hide();
     $(".intro").hide();
     $(".main").hide();
     $(".results").show();
 
-    for(i = 0; i < goalsSelected.length; i++) {
-      let classNum = i + 1;
-      let className = "results-" + classNum;
+    for(var i = 0; i < goalsSelected.length; i++) {
+      let className = "results-" + i;
       console.log(className);
 
       if (!goalsSelected[i]) {
         $("." + className).hide();
       }
     }
-
-    i = 0;
   }
 }
 
