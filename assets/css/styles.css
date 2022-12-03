@@ -8,7 +8,7 @@ img {
   width: 100%;
 }
 
-.goal-item {
+.pattern-item {
   background-color: #12EAEA;
   text-align: center;
   float: left;
@@ -18,7 +18,7 @@ img {
   margin: 10px;
 }
 
-.goal-item-true {
+.pattern-item-true {
   background-color: #ff0000;
   float: none;
   position: "relative";

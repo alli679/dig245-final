@@ -5,10 +5,7 @@ let dragZ = 10;
 let goalsSelected = [false, false, false, false, false, false, false, false, false, false];
 let deceptiveGoals = [2, 3, 4, 6, 7, 9];
 
-// Problems: Having trouble getting the correct results to show up depending on what patterns the user selected. I tried using a for loop, but the counter keeps increasing to 11.
-// Unable to drag boxes after reverting them once.
-
-$(".goal-item").draggable({
+$(".pattern-item").draggable({
   start: function(event, ui){
     $(this).css({
       "z-index": ++dragZ,
@@ -17,24 +14,23 @@ $(".goal-item").draggable({
 
   revert: function(dropElem){
     let item = $(this).data("item");
-    let className = "goal-" + item;
+    let className = "pattern-" + item;
     console.log(item, className);
 
     if (dropElem && dropElem.hasClass("goal-area")){
       patternSelected = true;
       goalsSelected[item] = true;
-      console.log("patternSelected" , patternSelected);
-      console.log(goalsSelected[item]);
+      console.log("goalsSelected", goalsSelected);
       for (var i = 0; i < deceptiveGoals.length; i++){
         if (item === deceptiveGoals[i]){
-          $(this).addClass("goal-item-true");
+          $(this).addClass("pattern-item-true");
         }
       }
       return false;
     } else {
       goalsSelected[item]= false;
       checkMainGoal();
-      $(this).removeClass("goal-item-true").css({
+      $(this).removeClass("pattern-item-true").css({
         position: "static"
       });
       setTimeout(function(){
@@ -134,12 +130,15 @@ function fourthPage(){
     $(".main").hide();
     $(".results").show();
 
-    for(var i = 0; i < goalsSelected.length; i++) {
-      let className = "results-" + i;
-      console.log(className);
+    var i = 0;
 
-      if (!goalsSelected[i]) {
+    for(i; i < goalsSelected.length; i++) {
+      let className = "results-" + i;
+
+      if (goalsSelected[i] === false) {
         $("." + className).hide();
+      } else {
+        $("." + className).show();
       }
     }
   }
