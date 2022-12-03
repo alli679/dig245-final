@@ -3,10 +3,9 @@
 var patternSelected = false;
 let dragZ = 10;
 let goalsSelected = [false, false, false, false, false, false, false, false, false, false];
-let deceptiveGoals = [3, 4, 5, 7, 8, 10];
+let deceptiveGoals = [2, 3, 4, 6, 7, 9];
 
 // Problems: Having trouble getting the correct results to show up depending on what patterns the user selected. I tried using a for loop, but the counter keeps increasing to 11.
-// The results also keep showing infromation of the pattern to the right of the one selected.
 // Unable to drag boxes after reverting them once.
 
 $(".goal-item").draggable({
