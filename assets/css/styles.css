@@ -11,6 +11,15 @@ img {
 .btn {
   background-color: #B0DB43;
   border-color: #B0DB43;
+  margin: 15px;
+}
+
+.description {
+  margin: 15px 0px;
+}
+
+.How-to-use {
+  align-content: center;
 }
 
 .pattern-item {
@@ -27,6 +36,22 @@ img {
   background-color: #DB2763;
   float: none;
   position: "relative";
+}
+
+.demonstration-ethical {
+  background-color: #12EAEA;
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.demonstration-unethical {
+  background-color: #DB2763;
+  text-align: center;
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
 }
 
 .goal-area {
@@ -46,4 +71,10 @@ img {
 
 .btn {
   width: 100%;
+}
+
+@media(min-width: 1200px) {
+  .How-to-use {
+    width: 60%;
+  }
 }
