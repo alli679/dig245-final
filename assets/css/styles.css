@@ -8,6 +8,11 @@ img {
   width: 100%;
 }
 
+.btn {
+  background-color: #B0DB43;
+  border-color: #B0DB43;
+}
+
 .pattern-item {
   background-color: #12EAEA;
   text-align: center;
@@ -19,7 +24,7 @@ img {
 }
 
 .pattern-item-true {
-  background-color: #ff0000;
+  background-color: #DB2763;
   float: none;
   position: "relative";
 }
