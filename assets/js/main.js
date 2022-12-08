@@ -20,6 +20,11 @@ $(".pattern-item").draggable({
     if (dropElem && dropElem.hasClass("goal-area")){
       patternSelected = true;
       goalsSelected[item] = true;
+
+      $("#submit-btn").css({
+        "background-color": "#B0DB43"
+      });
+
       console.log("goalsSelected", goalsSelected);
       for (var i = 0; i < deceptiveGoals.length; i++){
         if (item === deceptiveGoals[i]){
@@ -30,6 +35,13 @@ $(".pattern-item").draggable({
     } else {
       goalsSelected[item]= false;
       checkMainGoal();
+
+      if (patternSelected === false){
+        $("#submit-btn").css({
+          "background-color": "gray"
+        });
+      }
+
       $(this).removeClass("pattern-item-true").css({
         position: "static"
       });
@@ -114,6 +126,12 @@ function secondPage(){
   $(".intro").show();
   $(".main").hide();
   $(".results").hide();
+
+  if (patternSelected === false) {
+    $("#submit-btn").css({
+      "background-color": "gray"
+    });
+  }
 }
 
 function thirdPage(){
