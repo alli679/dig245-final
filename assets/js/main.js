@@ -2,8 +2,8 @@
 /* javascript */
 var patternSelected = false;
 let dragZ = 10;
-let goalsSelected = [false, false, false, false, false, false, false, false, false, false];
-let deceptiveGoals = [2, 3, 4, 6, 7, 9];
+let patternsSelected = [false, false, false, false, false, false, false, false, false, false];
+let deceptivePatterns = [2, 3, 4, 6, 7, 9];
 
 $(".pattern-item").draggable({
   start: function(event, ui){
@@ -19,21 +19,21 @@ $(".pattern-item").draggable({
 
     if (dropElem && dropElem.hasClass("goal-area")){
       patternSelected = true;
-      goalsSelected[item] = true;
+      patternsSelected[item] = true;
 
       $("#submit-btn").css({
         "background-color": "#B0DB43"
       });
 
-      console.log("goalsSelected", goalsSelected);
-      for (var i = 0; i < deceptiveGoals.length; i++){
-        if (item === deceptiveGoals[i]){
+      console.log("patternsSelected", patternsSelected);
+      for (var i = 0; i < deceptivePatterns.length; i++){
+        if (item === deceptivePatterns[i]){
           $(this).addClass("pattern-item-true");
         }
       }
       return false;
     } else {
-      goalsSelected[item]= false;
+      patternsSelected[item]= false;
       checkMainGoal();
 
       if (patternSelected === false){
@@ -59,15 +59,15 @@ $(".pattern-item").draggable({
 
 function checkMainGoal(){
   let selected = false;
-  for(var i = 0; i < goalsSelected.length; i++) {
-    if (goalsSelected[i] === true){
+  for(var i = 0; i < patternsSelected.length; i++) {
+    if (patternsSelected[i] === true){
       selected = true;
 
       break;
     }
   }
   patternSelected = selected;
-  console.log("Goal selected", goalsSelected);
+  console.log("Pattern selected", patternsSelected);
   console.log("patternSelected", patternSelected);
 }
 
@@ -150,10 +150,10 @@ function fourthPage(){
 
     var i = 0;
 
-    for(i; i < goalsSelected.length; i++) {
+    for(i; i < patternsSelected.length; i++) {
       let className = "results-" + i;
 
-      if (goalsSelected[i] === false) {
+      if (patternsSelected[i] === false) {
         $("." + className).hide();
       } else {
         $("." + className).show();
