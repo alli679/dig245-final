@@ -71,45 +71,6 @@ function checkMainGoal(){
   console.log("patternSelected", patternSelected);
 }
 
-/*$(".goal-2").draggable({
-  drag: function(){
-    $(".goal-2").css({
-      "z-index": ++dragZ
-    });
-  },
-
-  start: function(event, ui){
-    if (!goalSelected){
-      startPos = ui.helper.position();
-    }
-  },
-
-  revert: function(dropElem){
-    if (dropElem && dropElem.hasClass("goal-area")){
-      goalSelected = true;
-      goal2Selected = true;
-      console.log(goalSelected);
-      console.log(goal2Selected);
-      $(".goal-2").css({
-        position: "absolute"
-      });
-      return false;
-    } else {
-      if (!goal1Selected && !goal3Selected && !goal4Selected && !goal5Selected && !goal6Selected && !goal7Selected && !goal8Selected && !goal9Selected && !goal10Selected) {
-        goalSelected = false;
-      }
-      goal2Selected = false;
-      $(".goal-2").css({
-        top: startPos.top,
-        left: startPos.left,
-        position: "static"
-      });
-      return false;
-    }
-  }
-});*/
-
-
 $(".goal-area").droppable({});
 
 firstPage();
@@ -138,6 +99,15 @@ function thirdPage(){
   $(".start").hide();
   $(".intro").hide();
   $(".main").show();
+  $(".main-mobile").hide();
+  $(".results").hide();
+}
+
+function thirdPageMobile(){
+  $(".start").hide();
+  $(".intro").hide();
+  $(".main").show();
+  $(".main-desktop").hide();
   $(".results").hide();
 }
 
@@ -163,8 +133,8 @@ function fourthPage(){
 }
 
 // Add new functions
-
 $(document).on("click", "#start-btn", secondPage);
 $(document).on("click", "#continue-btn", thirdPage);
+$(document).on("click", "#continue-btn-mobile", thirdPageMobile);
 $(document).on("click", "#submit-btn", fourthPage);
 $(document).on("click", "#restart-btn", thirdPage);

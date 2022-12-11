@@ -18,6 +18,14 @@ img {
   margin: 15px;
 }
 
+.pattern-button {
+  background-color: #12EAEA;
+  border-color: #12EAEA;
+  text-align: center;
+  float: left;
+  position: "static";
+}
+
 .description {
   margin: 10px 0px 35px 0px;
 }
@@ -36,6 +44,7 @@ img {
 
 .pattern-item {
   background-color: #12EAEA;
+  border-color: #12EAEA;
   text-align: center;
   float: left;
   position: "static";
@@ -73,7 +82,7 @@ img {
 }
 
 .screenshot {
-  height: 450px;
+  min-height: 350px;
   width: auto;
 }
 
