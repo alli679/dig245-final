@@ -92,6 +92,9 @@ function secondPage(){
     $("#submit-btn").css({
       "background-color": "gray"
     });
+    $("#submit-btn-mobile").css({
+      "background-color": "gray"
+    });
   }
 }
 
@@ -100,6 +103,7 @@ function thirdPage(){
   $(".intro").hide();
   $(".main").show();
   $(".main-mobile").hide();
+  $("#submit-btn-mobile").hide();
   $(".results").hide();
 }
 
@@ -108,7 +112,45 @@ function thirdPageMobile(){
   $(".intro").hide();
   $(".main").show();
   $(".main-desktop").hide();
+  $("#submit-btn").hide();
   $(".results").hide();
+}
+
+function checkButton(){
+  let item = $(this).data("item");
+
+  if (patternsSelected[item] === false) {
+    patternsSelected[item] = true;
+    patternSelected = true;
+
+    $("#submit-btn-mobile").css({
+      "background-color": "#B0DB43"
+    });
+
+    $(this).css({
+      "background-color": "blue"
+    });
+
+    for (var i = 0; i < deceptivePatterns.length; i++){
+      if (item === deceptivePatterns[i]){
+        $(this).css({
+          "background-color": "#DB2763"
+        });
+      }
+    }
+  } else {
+    patternsSelected[item] = false;
+    $(this).css({
+      "background-color": "#12EAEA"
+    });
+    checkMainGoal();
+
+    if (patternSelected === false){
+      $("#submit-btn-mobile").css({
+        "background-color": "gray"
+      });
+    }
+  }
 }
 
 function fourthPage(){
@@ -117,6 +159,29 @@ function fourthPage(){
     $(".intro").hide();
     $(".main").hide();
     $(".results").show();
+    $("#restart-btn-mobile").hide();
+
+    var i = 0;
+
+    for(i; i < patternsSelected.length; i++) {
+      let className = "results-" + i;
+
+      if (patternsSelected[i] === false) {
+        $("." + className).hide();
+      } else {
+        $("." + className).show();
+      }
+    }
+  }
+}
+
+function fourthPageMobile(){
+  if (patternSelected) {
+    $(".start").hide();
+    $(".intro").hide();
+    $(".main").hide();
+    $(".results").show();
+    $("#restart-btn").hide();
 
     var i = 0;
 
@@ -136,5 +201,8 @@ function fourthPage(){
 $(document).on("click", "#start-btn", secondPage);
 $(document).on("click", "#continue-btn", thirdPage);
 $(document).on("click", "#continue-btn-mobile", thirdPageMobile);
+$(document).on("click", ".pattern-button", checkButton);
 $(document).on("click", "#submit-btn", fourthPage);
+$(document).on("click", "#submit-btn-mobile", fourthPageMobile);
 $(document).on("click", "#restart-btn", thirdPage);
+$(document).on("click", "#restart-btn-mobile", thirdPageMobile);
