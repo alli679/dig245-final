@@ -75,6 +75,16 @@ img {
   margin: 0px 10px 10px 10px;
 }
 
+.demonstration-ethical-mobile {
+  background-color: blue;
+  border-color: #12EAEA;
+}
+
+.demonstration-unethical-mobile {
+  background-color: #DB2763;
+  border-color: #12EAEA;
+}
+
 .goal-area {
   background-color: #C492B1;
   height: 300px;

@@ -85,6 +85,24 @@ function firstPage(){
 function secondPage(){
   $(".start").hide();
   $(".intro").show();
+  $(".intro-mobile").hide();
+  $(".main").hide();
+  $(".results").hide();
+
+  if (patternSelected === false) {
+    $("#submit-btn").css({
+      "background-color": "gray"
+    });
+    $("#submit-btn-mobile").css({
+      "background-color": "gray"
+    });
+  }
+}
+
+function secondPageMobile(){
+  $(".start").hide();
+  $(".intro").show();
+  $(".intro-desktop").hide();
   $(".main").hide();
   $(".results").hide();
 
@@ -199,6 +217,7 @@ function fourthPageMobile(){
 
 // Add new functions
 $(document).on("click", "#start-btn", secondPage);
+$(document).on("click", "#start-btn-mobile", secondPageMobile);
 $(document).on("click", "#continue-btn", thirdPage);
 $(document).on("click", "#continue-btn-mobile", thirdPageMobile);
 $(document).on("click", ".pattern-button", checkButton);
