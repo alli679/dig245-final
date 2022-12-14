@@ -5,6 +5,11 @@ let dragZ = 10;
 let patternsSelected = [false, false, false, false, false, false, false, false, false, false];
 let deceptivePatterns = [2, 3, 4, 6, 7, 9];
 
+// Viewed code from: https://stackoverflow.com/questions/12744928/in-jquery-how-can-i-set-top-left-properties-of-an-element-with-position-values
+// https://stackoverflow.com/questions/49883153/if-a-strict-mode-function-is-executed-using-function-invocation-its-this-valu
+// https://stackoverflow.com/questions/12350259/original-position-of-a-draggable-in-jquery-ui
+// https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element
+
 $(".pattern-item").draggable({
   start: function(event, ui){
     $(this).css({
